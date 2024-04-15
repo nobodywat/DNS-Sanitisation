@@ -6,6 +6,7 @@
 import requests
 import json
 import time
+import ipaddress
 
 start_time=time.time()
 print("Program running..................................................................................................................")
@@ -63,6 +64,20 @@ def check_least_ok(json_result, phrase):
     return json.dumps(json_result).find(phrase)
 
 
+# returns 1 if ip IS private,
+# returns 0 if ip IS NOT private
+def in_subnet(ip, subnet_list):
+    ip_addr=ipaddress.ip_address(ip)
+
+    for range in subnet_list:
+        subnet=ipaddress.ip_network(range)
+
+        if ip_addr in subnet:
+            return 1 
+
+    return 0 
+
+
 ip_list="ip_sanitisation/test_ip_list.txt"
 online_ips = []
 offline_ips = []
@@ -74,19 +89,22 @@ try:
     for ip in dirty_ips:
         ip = ip.strip()  # Clean any trailing newline characters
 
-        check_host_res=check_host(ip, "icmp")
-        check_ok=check_least_ok(check_host_res, "OK")
-        if check_ok==-1: # if check using icmp fail, 
+        # check ip not private
+        priv_ranges=['10.0.0.0/8', '172.16.0.0/12', '192.168.0.0/16']
+        if in_subnet(ip, priv_ranges)==0:
 
-            check_host_res=check_host(ip, "tcp")
-            check_ok=check_least_ok(check_host_res, "time")
-            if check_ok==-1: # if check using tcp fail,
-                offline_ips.append(ip+"\n") # IP is offline
-            else:
-                online_ips.append(ip+"\n") # IP is online but blocks icmp
-
-        else: # if check using icmp pass,
-            online_ips.append(ip+"\n") # IP is online
+            check_host_res=check_host(ip, "icmp")
+            check_ok=check_least_ok(check_host_res, "OK")
+            if check_ok==-1: # if check using icmp fail, 
+                check_host_res=check_host(ip, "tcp")
+                check_ok=check_least_ok(check_host_res, "time")
+                if check_ok==-1: # if check using tcp fail,
+                    offline_ips.append(ip+"\n") # IP is offline
+                else:
+                    online_ips.append(ip+"\n") # IP is online but blocks icmp
+            else: # if check using icmp pass,
+                online_ips.append(ip+"\n") # IP is online
+                
 
     # write online_ips to file
     with open("ip_sanitisation/online_ips.txt", "w") as output_file:
