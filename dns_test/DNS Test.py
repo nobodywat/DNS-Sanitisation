@@ -21,13 +21,12 @@ try:
     with open('../dns_sanitisation/results/resolved_domains.txt', "r") as file:
         domains = file.read().splitlines()
 
-    with open("firewall.txt", "r") as ip_file:
+    with open("ausIPs.txt", "r") as ip_file:
         ausIPs = [ipaddress.ip_network(line.strip()) for line in ip_file] # Read Australian IP networks from file
 
     for domain in domains:
         ip = resolveDomain(domain)
         if ip:
-            print(f'{domain}: {ip} was resolved successfully')
             ipObj = ipaddress.ip_address(ip)
             if any(ipObj in net for net in privateIPs): # Check if IP is in private network
                 blackholing.append(domain + ": " + ip + '\n')
