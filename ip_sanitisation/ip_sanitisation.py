@@ -8,19 +8,19 @@ import json
 import time
 import ipaddress
 
-start_time=time.time()
+startTime=time.time()
 print("Program running..................................................................................................................")
     
-def check_host(target_ip, protocol):
+def checkHost(targetIp, protocol):
     url="https://check-host.net/"
-    res_url="https://check-host.net/check-result/"
+    resUrl="https://check-host.net/check-result/"
 
     # create request
     headers={
         "Accept": "application/json"
     }
     params={
-        "host": target_ip, 
+        "host": targetIp, 
         # "max_nodes": "3"
     }
 
@@ -31,94 +31,94 @@ def check_host(target_ip, protocol):
     elif protocol=="tcp":
         url=url+"check-tcp"
         params={
-        "host": target_ip+":443", 
+        "host": targetIp+":443", 
         # "max_nodes": "3"
         }
     else:
         print("Invalid protocol specified")
         return 0
 
-    # send request to check_host API for target_ip
+    # send request to check_host API for targetIp
     # returns json object of results
 
     # send request and receive response 
     res=requests.get(url, headers=headers, params=params).json()
     
     # read request id
-    req_id=res["request_id"]
+    reqId=res["request_id"]
 
-    res_url=res_url+req_id
+    resUrl=resUrl+reqId
 
     time.sleep(2) # sleep for 1 sec to allow the results to load
 
     # send request
-    response=requests.get(res_url, headers=headers)
+    response=requests.get(resUrl, headers=headers)
 
     # return results as json object
     return response.json()
 
 
-def check_least_ok(json_result, phrase):
+def checkLeastOk(jsonResult, phrase):
     # check json for at least one occurence of phrase
     # returns index if found and -1 if not found.
-    return json.dumps(json_result).find(phrase)
+    return json.dumps(jsonResult).find(phrase)
 
 
 # returns 1 if ip IS private,
 # returns 0 if ip IS NOT private
-def in_subnet(ip, subnet_list):
-    ip_addr=ipaddress.ip_address(ip)
+def inSubnet(ip, subnetList):
+    ipAddr=ipaddress.ip_address(ip)
 
-    for range in subnet_list:
+    for range in subnetList:
         subnet=ipaddress.ip_network(range)
 
-        if ip_addr in subnet:
+        if ipAddr in subnet:
             return 1 
 
     return 0 
 
 
-ip_list="ip_sanitisation/test_ip_list.txt"
-online_ips = []
-offline_ips = []
+ipList="ip_sanitisation/test_ip_list.txt"
+onlineIps = []
+offlineIps = []
 
 try:
-    with open(ip_list, "r") as file:
-        dirty_ips = file.readlines()
+    with open(ipList, "r") as file:
+        dirtyIps = file.readlines()
 
-    for ip in dirty_ips:
+    for ip in dirtyIps:
         ip = ip.strip()  # Clean any trailing newline characters
 
         # check ip not private
-        priv_ranges=['10.0.0.0/8', '172.16.0.0/12', '192.168.0.0/16']
-        if in_subnet(ip, priv_ranges)==0:
+        privRanges=['10.0.0.0/8', '172.16.0.0/12', '192.168.0.0/16']
+        if inSubnet(ip, privRanges)==0:
 
-            check_host_res=check_host(ip, "icmp")
-            check_ok=check_least_ok(check_host_res, "OK")
-            if check_ok==-1: # if check using icmp fail, 
-                check_host_res=check_host(ip, "tcp")
-                check_ok=check_least_ok(check_host_res, "time")
-                if check_ok==-1: # if check using tcp fail,
-                    offline_ips.append(ip+"\n") # IP is offline
+            checkHostRes=checkHost(ip, "icmp")
+            checkOk=checkLeastOk(checkHostRes, "OK")
+            if checkOk==-1: # if check using icmp fail, 
+                checkHostRes=checkHost(ip, "tcp")
+                checkOk=checkLeastOk(checkHostRes, "time")
+                if checkOk==-1: # if check using tcp fail,
+                    offlineIps.append(ip+"\n") # IP is offline
                 else:
-                    online_ips.append(ip+"\n") # IP is online but blocks icmp
+                    onlineIps.append(ip+"\n") # IP is online but blocks icmp
             else: # if check using icmp pass,
-                online_ips.append(ip+"\n") # IP is online
+                onlineIps.append(ip+"\n") # IP is online
                 
 
     # write online_ips to file
-    with open("ip_sanitisation/online_ips.txt", "w") as output_file:
-        output_file.writelines(online_ips)
+    with open("ip_sanitisation/online_ips.txt", "w") as outputFile:
+        outputFile.writelines(onlineIps)
 
     # write offline_ips to file
-    with open("ip_sanitisation/offline_ips.txt", "w") as output_file:
-        output_file.writelines(offline_ips)
+    with open("ip_sanitisation/offline_ips.txt", "w") as outputFile:
+        outputFile.writelines(offlineIps)
 
 except FileNotFoundError:
-    print("The file", ip_list, "does not exist.")
+    print("The file", ipList, "does not exist.")
 except Exception as e:
     print(f"An error occurred: {e}")
 
 print("Program ended successfully----------------------------------------------------------------------------------------------------")
-end_time=time.time()
-print("Elapsed time: ", end_time-start_time)
+endTime=time.time()
+print("Elapsed time: ", endTime-startTime)
