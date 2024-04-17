@@ -78,8 +78,9 @@ def inSubnet(ip, subnetList):
     return 0 
 
 
-ipList="ip_sanitisation/test_ip_list.txt"
-onlineIps = []
+ipList="IP/test_ip_list.txt"
+listA = []
+listB = []
 offlineIps = []
 
 try:
@@ -101,17 +102,20 @@ try:
                 if checkOk==-1: # if check using tcp fail,
                     offlineIps.append(ip+"\n") # IP is offline
                 else:
-                    onlineIps.append(ip+"\n") # IP is online but blocks icmp
+                    listB.append(ip+"\n") # IP is online but blocks icmp: add to list B
             else: # if check using icmp pass,
-                onlineIps.append(ip+"\n") # IP is online
+                listA.append(ip+"\n") # IP is online: add to list A
                 
 
     # write online_ips to file
-    with open("ip_sanitisation/online_ips.txt", "w") as outputFile:
-        outputFile.writelines(onlineIps)
+    with open("IP/list_a.txt", "w") as outputFile:
+        outputFile.writelines(listA)
+
+    with open("IP/list_b.txt", "w") as outputFile:
+        outputFile.writelines(listB)
 
     # write offline_ips to file
-    with open("ip_sanitisation/offline_ips.txt", "w") as outputFile:
+    with open("IP/offline_ips.txt", "w") as outputFile:
         outputFile.writelines(offlineIps)
 
 except FileNotFoundError:
