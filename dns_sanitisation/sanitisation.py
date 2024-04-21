@@ -32,8 +32,8 @@ try:
         output.writelines(resolvedDomains)
         
     # Writing resolved IPs to a new file
-    with open("results/resolved_ips.txt", "w") as output:
-        output.writelines(resolvedIPs)
+    # with open("results/resolved_ips.txt", "w") as output:
+    #     output.writelines(resolvedIPs)
 
 except FileNotFoundError:
     print("The file 'domain_list.txt' does not exist.")
