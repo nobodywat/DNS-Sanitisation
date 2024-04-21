@@ -1,10 +1,10 @@
-import requests
-import json
 import time
-import ipaddress
+import requests
+from ping3 import ping, verbose_ping
 
 startTime=time.time()
 print("Program running..................................................................................................................")
+
 
 def checkHost(targetIp, protocol):
     url="https://check-host.net/"
@@ -72,10 +72,7 @@ try:
     for ip in listAIps:
         ip=ip.strip()
 
-        checkHostRes=checkHost(ip, "icmp")
-        checkOk=checkLeastOk(checkHostRes, "OK")
-
-        if checkOk==-1: # if check fails
+        if ping(ip)==None: # if check fails
             blockedIps.append(ip+"\n")
         else:
             unblockedIps.append(ip+"\n")
@@ -106,12 +103,12 @@ except FileNotFoundError:
 except Exception as e:
     print(f"An error occurred: {e}")
 
+
 with open("IP/blockedIps.txt", "w") as outputFile:
         outputFile.writelines(blockedIps)
 
 with open("IP/unblockedIps.txt", "w") as outputFile:
         outputFile.writelines(unblockedIps)
-
 
 
 print("Program ended successfully----------------------------------------------------------------------------------------------------")
