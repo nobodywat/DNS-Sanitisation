@@ -1,0 +1,30 @@
+zerotracker.com	127.0.0.1
+tracker.shuntv.net	127.0.0.1
+prestige.minimafia.nl	127.0.0.1
+tracker.computel.fr	0.0.0.0
+tracker.tfile.co	127.0.0.1
+pj.sidewalkcrusaders.com	127.0.0.1
+streamingcommunity.arab	127.0.53.53
+streamingcommunity.music	127.0.53.53
+tuttostream.arab	127.0.53.53
+tuttostream.music	127.0.53.53
+tracker.stfu.ca	127.0.0.1
+randombytes.org	127.0.0.1
+tracker.e-utp.net	127.0.0.1
+tantifilm.arab	127.0.53.53
+tracker.pomf.se	127.0.0.1
+spisoft.net	127.0.0.1
+tracker.ccc.de	127.0.0.1
+tracker.hiyj.cn	127.0.0.1
+papaja.v2v.cc	127.0.0.1
+tracker.packetstorm.ch	127.0.0.1
+tracker.best-torrents.net	127.0.0.1
+romtohome.com	127.0.0.1
+torrents.animes-bg.com	127.0.0.1
+zone-torrent.net	127.0.0.1
+
+
+
+
+
+Rate-For-DNS-Blackholing.txt found to be: 6.27%

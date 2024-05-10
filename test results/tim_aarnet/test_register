@@ -1,0 +1,36 @@
+test ID
+
+Date conducted
+	8 May 2024 11:35
+
+Executed by: 
+	Timothy Hao Cheng Chan 47807288
+	timothyhaocheng.chan@students.mq.edu.au
+
+Test description:
+	
+Pre-requisites/ conditions:
+	Python3 installed
+	dnspython package installed
+	Macquarie OneNet (AARNet)
+	Default DNS server
+	firewall off
+	private relay off
+
+Hypothesis/ expected results
+	majority sites blocked using DNS dropping
+
+Summary of results
+	pirate-copyright
+		blackholing: 			6.01%
+		DNS-dropped (null-entry): 	0.26%
+		not blocked: 			93.73%
+	malware-malicious
+		blackholing: 			3.96%
+		dns-dropped(firewall): 		0.53%
+		dns-dropped(null-entry):	0.53%
+		not blocked: 			94.99%
+	fake-phishing
+		blackholing: 			9.84%
+		dns-dropped(null-entry):	0.27%
+		not dropped:			89.89%	
