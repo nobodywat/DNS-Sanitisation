@@ -1,0 +1,42 @@
+americanpharmacyshop.com	127.0.0.1
+butlersde.com	127.0.0.1
+ellicas.de	127.0.0.1
+com	127.0.0.1
+balla-gartenbau.de	127.0.0.1
+tvlowboards.de	127.0.0.1
+pillstd.com	127.0.0.1
+bhgartenbau.de	127.0.0.1
+borcons.de	127.0.0.1
+eurobo24.de	127.0.0.1
+trustpharmacyshop.com	127.0.0.127
+unitedsaverpharmacy.com	127.0.0.1
+bk-daten.de	127.0.0.1
+griesinger-garten.de	127.0.0.1
+pleaserschweiz.com	127.0.0.1
+talvis-shop.de	127.0.0.1
+canada-pharm.com	127.0.0.127
+foldkaffee.de	127.0.0.1
+bh-garten.de	127.0.0.1
+elektro-beuss.de	127.0.0.10
+simplyviagra.com	127.0.0.127
+eazykochen.de	127.0.0.1
+viagrakkk.com	127.0.0.1
+daynighthealthcare.com	127.0.0.127
+wohnungen-wohnen.de	127.0.0.1
+secureabortionpills.com	127.0.0.1
+rxbase.net	127.0.0.1
+stromectol-3mg.net	127.0.0.1
+wal24.de	127.0.0.1
+skechediscounts.de	127.0.0.1
+viagra6freeesample.ru	127.0.0.1
+shopgenusswelt.de	127.0.0.1
+certifiedfarm.co	127.0.0.127
+doctorssolve.net	127.0.0.127
+tksmarkt.de	127.0.0.1
+genericmeds.biz	127.0.0.127
+
+
+
+
+
+Rate-For-DNS-Blackholing.txt found to be: 9.84%

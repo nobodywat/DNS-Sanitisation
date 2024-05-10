@@ -1,0 +1,18 @@
+gostatts.com	185.196.9.218
+bn.networkbn.click	103.237.145.7
+ss.02maill.com	89.117.1.177
+secure-network-rebirthltd.ru	212.70.149.10
+krd6.com	5.42.98.26
+aomacamada.ddns.net	203.145.46.240
+torrent-games.eu	103.224.182.238
+jaimemcgee.top	108.186.115.230
+kayomirai.kro.kr	185.196.10.155
+backupssupport.com	205.234.201.153
+legendsworld.in	15.197.130.221
+matrix-virovitica.com	85.17.172.242
+
+
+
+
+
+Rate-For-DNS-Dropped(Null-Entry).txt found to be: 3.13%

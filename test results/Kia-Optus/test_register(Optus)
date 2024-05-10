@@ -1,0 +1,35 @@
+test ID
+
+Date conducted
+	8 May 2024 12:22
+
+Executed by: 
+	Kianoush Mehrandish 46239987
+	kianoush.mehrandish@students.mq.edu.au 
+
+Test description:
+	
+Pre-requisites/ conditions:
+	Python3 installed
+	dnspython package installed
+	Optus
+	Default DNS server
+	firewall off
+	private relay
+
+Hypothesis/ expected results
+	Getting results for different DNS blocking methods
+
+Summary of results
+	pirate-copyright
+		blackholing: 			6.01%
+		DNS-dropped (null-entry): 	0.26%
+		Dns-Redirection (poisoning)     11.75%
+		not blocked: 			81.98%
+
+	malware-malicious
+		blackholing: 			5.01%
+		not blocked: 			94.99%
+	fake-phishing
+		blackholing: 			10.11%
+		not blocked:			89.89%

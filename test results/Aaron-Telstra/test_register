@@ -1,0 +1,35 @@
+test ID
+
+Date conducted
+	8 May 2024 11:00
+
+Executed by: 
+	Aaron Ngo 47084472
+	Aaron.ngo@students.mq.edu.au
+
+Test description:
+	
+Pre-requisites/ conditions:
+	Python3 installed
+	dnspython package installed
+	Default DNS server
+	firewall off
+	private relay off
+
+Hypothesis/ expected results
+	majority sites blocked using DNS dropping
+
+Summary of results
+	pirate-copyright
+		blackholing: 			6.27%
+		DNS-dropped (null-entry): 	3.13%
+		DNS-Redirected (High Potential) 14.36%
+		not blocked: 			75.98%
+	malware-malicious
+		blackholing: 			5.01%
+		DNS-Redirected (High Potential) 44.33%
+		not blocked: 			50.40%
+	fake-phishing
+		blackholing: 			9.84%
+		DNS-Redirected (High Potential) 7.65%
+		not blocked: 			81.42%

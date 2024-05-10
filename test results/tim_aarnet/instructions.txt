@@ -1,0 +1,33 @@
+These steps should be carried out in one sitting.
+
+1. Make sure your DNS server is set to the ISP default
+2. Make sure your local firewall is turned off
+3. (On Mac) Make sure apple private relay is turned off
+4. Check your network connection at https://www.fusionconnect.com/speed-test-plus. A decent download and upload speed, and jitter value less than 10 should be ok.
+5. Screenshot your fusionconnect result page.
+6. Install the dnspython package "pip install dnspython"
+
+Sanitisation
+1. Run “python3 sanitizer-tcp-resolver.py Pirate-Copyright-Domains.txt”
+2. Run “python3 sanitizer-tcp-resolver.py Malware-Malicious-Domains.txt”
+3. Run “python3 sanitizer-tcp-resolver.py Fake-Phishing-Domains.txt”
+
+As a result, 3 txt files will be created:
+	- “Ready-For-Analyzer-Pirate-Copyright-Domains.txt”
+	- “Ready-For-Analyzer-Malware-Malicious-Domains.txt"
+	- "Ready-For-Analyzer-Fake-Phishing-Domains.txt"
+
+Analysis
+1. Run "python3 analyzer.py Ready-For-Analyzer-Pirate-Copyright-Domains.txt australian-ipv4-cidr.txt"
+2. Run "python3 analyzer.py Ready-For-Analyzer-Malware-Malicious-Domains.txt australian-ipv4-cidr.txt"
+3. Run "python3 analyzer.py Ready-For-Analyzer-Fake-Phishing-Domains.txt australian-ipv4-cidr.txt"
+
+As a result, 3 folders will be created:
+	- Ready-For-Analyzer-Pirate-Copyright-Domains
+	- Ready-For-Analyzer-Malware-Malicious-Domains
+	- Ready-For-Analyzer-Fake-Phishing-Domains
+
+Results
+1. Create a new folder called "<your-name>_<your-isp>"
+2. Copy the 3 folders into this folder.
+3. Fill out test register.

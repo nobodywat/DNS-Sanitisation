@@ -1,0 +1,43 @@
+ellicas.de	127.0.0.1
+foldkaffee.de	127.0.0.1
+eurobo24.de	127.0.0.1
+talvis-shop.de	127.0.0.1
+butlersde.com	127.0.0.1
+unitedsaverpharmacy.com	127.0.0.1
+americanpharmacyshop.com	127.0.0.1
+genericmeds.biz	127.0.0.127
+cialisntab.com	127.0.0.1
+tksmarkt.de	127.0.0.1
+wohnungen-wohnen.de	127.0.0.1
+bh-garten.de	127.0.0.1
+balla-gartenbau.de	127.0.0.1
+stromectol-3mg.net	127.0.0.1
+trustpharmacyshop.com	127.0.0.127
+doctorssolve.net	127.0.0.127
+tvlowboards.de	127.0.0.1
+viagrakkk.com	127.0.0.1
+viagra6freeesample.ru	127.0.0.1
+wal24.de	127.0.0.1
+secureabortionpills.com	127.0.0.1
+shopgenusswelt.de	127.0.0.1
+borcons.de	127.0.0.1
+bhgartenbau.de	127.0.0.1
+skechediscounts.de	127.0.0.1
+canada-pharm.com	127.0.0.127
+weihnachtstassenstore.com	127.0.0.1
+eazykochen.de	127.0.0.1
+pillstd.com	127.0.0.1
+bk-daten.de	127.0.0.1
+daynighthealthcare.com	127.0.0.127
+griesinger-garten.de	127.0.0.1
+certifiedfarm.co	127.0.0.127
+elektro-beuss.de	127.0.0.10
+pleaserschweiz.com	127.0.0.1
+rxbase.net	127.0.0.1
+simplyviagra.com	127.0.0.127
+
+
+
+
+
+Rate-For-DNS-Blackholing.txt found to be: 10.14%

@@ -1,0 +1,36 @@
+test ID
+
+Date conducted
+	8 May 2024 22:17
+
+Executed by: 
+	Calvin Mak 45983399
+	calvin.mak@students.mq.edu.au
+
+Test description:
+	
+Pre-requisites/ conditions:
+	Python3 installed
+	dnspython package installed
+	Macquarie OneNet (AARNet)
+	Default DNS server
+	firewall off
+	private relay off
+
+Hypothesis/ expected results
+	majority sites blocked using DNS dropping
+
+Summary of results
+	pirate-copyright
+		blackholing: 			6.27%
+		DNS-dropped (null-entry): 	0.52%
+		not blocked: 			93.21%
+	malware-malicious
+		blackholing: 			5.01%
+		dns-dropped(firewall): 		0%
+		dns-dropped(null-entry):	0%
+		not blocked: 			94.99%
+	fake-phishing
+		blackholing: 			6.27%
+		dns-dropped(null-entry):	3.84%
+		not dropped:			89.89%	

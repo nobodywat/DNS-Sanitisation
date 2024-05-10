@@ -1,0 +1,34 @@
+test ID
+
+Date conducted
+	8 May 2024 22:00
+
+Executed by: 
+	Thai Kiet Phan 45576211
+	thai-kiet.phan@students.mq.edu.au
+
+Test description:
+	
+Pre-requisites/ conditions:
+	Python3 installed
+	dnspython package installed
+	TPG Telecom Limited (TPG Internet Pty Ltd)
+	Default DNS server
+	firewall off
+	private relay off
+
+Hypothesis/ expected results
+	majority sites blocked using DNS dropping
+
+Summary of results
+	pirate-copyright
+		blackholing: 			10.14%
+		notblocked: 			89.86%
+	malware-malicious
+		blackholing: 			5.01%
+		notblocked: 			94.99%
+	fake-phishing
+		blackholing: 			6.27%
+		dns-dropped(null-entry):	0.26%
+		high-potential-dns-redirected	7.57%
+		notblocked			85.90%
