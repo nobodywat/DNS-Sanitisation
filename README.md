@@ -89,7 +89,7 @@ In our project, we tried to avoid falling into CDN false positives for redirecte
 
 ### Contributions Welcome
 
-Any contributions to our project are welcome. We intend to expand this framework and repository to catch other blocking methods such as IP filtering and BGP filtering. Future improvements include:
+Any contributions to our project are welcome. We intend to expand this framework and repository to catch other blocking methods such as IP filtering particularly BGP filtering. Future improvements include:
 - Capturing more DPI filtering methods beyond DNS queries, such as SNI DPI filtering. We also want to delve deeper into DPI by analyzing its detection behavior not only for headers but also for the body. For example, we plan to analyze and test DPI reactions to various cipher suite algorithms offered in both TLS 1.2 and TLS 1.3. We will focus particularly on stream ciphers in use, such as AES with different key sizes (128, 192, and 256), and bit-by-bit stream ciphers like ChaCha20. Additionally, we aim to examine integrity check methods such as CCMP, GCM, and Poly1305.
 
 Your contributions and suggestions are highly appreciated to make this project more robust and comprehensive.
